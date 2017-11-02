@@ -145,9 +145,29 @@ let regularSlice = Slice(columns: [
     SliceColumn(offset: 18, span: 6, cards: [Card(style: .regular)])
 ])
 
+let regularSliceLarge = Slice(columns: [
+    SliceColumn(offset: 0, span: 12, cards: [Card(style: .regular)]),
+    SliceColumn(offset: 12, span: 6, cards: [Card(style: .regular)]),
+    SliceColumn(offset: 18, span: 6, cards: [Card(style: .regular)])
+])
+
+let regular3ColumnSlice = Slice(columns: [
+    SliceColumn(offset: 0, span: 8, cards: [Card(style: .regular)]),
+    SliceColumn(offset: 8, span: 8, cards: [Card(style: .regular)]),
+    SliceColumn(offset: 16, span: 8, cards: [Card(style: .regular)])
+])
+
+let compactSlice = Slice(columns: [
+    SliceColumn(offset: 0, span: 6, cards: [Card(style: .compact)]),
+    SliceColumn(offset: 6, span: 6, cards: [Card(style: .compact)]),
+    SliceColumn(offset: 12, span: 6, cards: [Card(style: .compact)]),
+    SliceColumn(offset: 18, span: 6, cards: [Card(style: .compact)])
+])
+
+// "fixed/small/slow-IV"
 let fixed_small_slow_IV = CollectionLayoutTemplate(slices: [
     regularSlice
-])
+    ])
 
 fixed_small_slow_IV.setSize(CGSize(width: 200, height: 100), index: 0)
 fixed_small_slow_IV.setSize(CGSize(width: 200, height: 100), index: 1)
@@ -155,42 +175,42 @@ fixed_small_slow_IV.setSize(CGSize(width: 200, height: 100), index: 2)
 fixed_small_slow_IV.setSize(CGSize(width: 200, height: 150), index: 3)
 
 
-let c = fixed_small_slow_IV.count
-let h = fixed_small_slow_IV.height
-
-/*
-let regularSliceLarge = [
-    SliceColumn(offset: 0, span: 12, cards: [Card(style: .regular)]),
-    SliceColumn(offset: 12, span: 6, cards: [Card(style: .regular)]),
-    SliceColumn(offset: 18, span: 6, cards: [Card(style: .regular)])
-]
-
-let regular3ColumnSlice = [
-    SliceColumn(offset: 0, span: 8, cards: [Card(style: .regular)]),
-    SliceColumn(offset: 8, span: 8, cards: [Card(style: .regular)]),
-    SliceColumn(offset: 16, span: 8, cards: [Card(style: .regular)])
-]
-
-let compactSlice = [
-    SliceColumn(offset: 0, span: 6, cards: [Card(style: .compact)]),
-    SliceColumn(offset: 6, span: 6, cards: [Card(style: .compact)]),
-    SliceColumn(offset: 12, span: 6, cards: [Card(style: .compact)]),
-    SliceColumn(offset: 18, span: 6, cards: [Card(style: .compact)])
-]
-
-layouts["fixed/small/slow-IV"] = [
-    regularSlice
-]
-
-layouts["fixed/medium/fast-XII"] = [
+// "fixed/medium/fast-XII"
+let fixed_medium_fast_XII = CollectionLayoutTemplate(slices: [
     regularSlice,
     compactSlice,
     compactSlice
-]
+    ])
 
-layouts["fixed/small/slow-III"] = [
+// "fixed/small/slow-III"
+let fixed_small_slow_III = CollectionLayoutTemplate(slices: [
     regularSliceLarge
-]
+    ])
+
+
+// "fixed/small/slow-V-third"
+let fixed_small_slow_V_third = CollectionLayoutTemplate(slices: [
+    Slice(columns: [
+        SliceColumn(offset: 0, span: 6, cards: [Card(style: .regular)]),
+        SliceColumn(offset: 6, span: 6, cards: [Card(style: .regular)]),
+        SliceColumn(offset: 12, span: 12, cards: [
+            Card(style: .compact),
+            Card(style: .compact),
+            Card(style: .compact)
+            ])
+        ])
+    ])
+
+let t = fixed_small_slow_V_third
+t.setSize(CGSize(width: 200, height: 200), index: 0)
+t.setSize(CGSize(width: 200, height: 200), index: 1)
+t.setSize(CGSize(width: 200, height: 80), index: 2)
+t.setSize(CGSize(width: 200, height: 150), index: 3)
+t.setSize(CGSize(width: 200, height: 150), index: 4)
+let c = t.count
+let h = t.height
+
+/*
 
 layouts["fixed/small/slow-V-third"] = [[
     SliceColumn(offset: 0, span: 6, cards: [Card(style: .regular)]),
