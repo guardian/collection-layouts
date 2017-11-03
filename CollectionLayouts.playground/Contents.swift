@@ -1,6 +1,7 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
+import PlaygroundSupport
 
 let gutter: CGFloat = 8
 
@@ -168,6 +169,13 @@ let compactSlice = Slice(columns: [
 let fixed_small_slow_IV = CollectionLayoutTemplate(slices: [
     regularSlice
     ])
+
+let fileUrl = playgroundSharedDataDirectory.appendingPathComponent("fixed_small_slow_IV.json")
+//let fileUrl = URL(fileURLWithPath: "~/Desktop").appendingPathComponent("fixed_small_slow_IV.json")
+print(fileUrl)
+if let data = try? JSONEncoder().encode(fixed_small_slow_IV) {
+    try data.write(to: fileUrl)
+}
 
 fixed_small_slow_IV.setSize(CGSize(width: 200, height: 100), index: 0)
 fixed_small_slow_IV.setSize(CGSize(width: 200, height: 100), index: 1)
