@@ -218,46 +218,37 @@ t.setSize(CGSize(width: 200, height: 150), index: 4)
 let c = t.count
 let h = t.height
 
-/*
 
-layouts["fixed/small/slow-V-third"] = [[
-    SliceColumn(offset: 0, span: 6, cards: [Card(style: .regular)]),
-    SliceColumn(offset: 6, span: 6, cards: [Card(style: .regular)]),
-    SliceColumn(offset: 12, span: 12, cards: [
-        Card(style: .compact),
-        Card(style: .compact),
-        Card(style: .compact)
+let fixed_small_slow_I = CollectionLayoutTemplate(slices: [
+    Slice(columns: [
+        SliceColumn(offset: 0, span: 24, cards: [Card(style: .regular)])
         ])
-]]
+    ])
 
-layouts["fixed/small/slow-I"] = [[
-    SliceColumn(offset: 0, span: 24, cards: [Card(style: .regular)])
-]]
-
-layouts["fixed/small/slow-I"] = [
-    [
+let fixed_medium_slow_VI = CollectionLayoutTemplate(slices: [
+    Slice(columns: [
         SliceColumn(offset: 0, span: 18, cards: [Card(style: .regular)]),
         SliceColumn(offset: 18, span: 6, cards: [Card(style: .regular)])
-    ],
+    ]),
     regularSlice
-]
+])
 
-layouts["fixed/large/slow-XIV"] = [
-    [
+let fixed_large_slow_XIV = CollectionLayoutTemplate(slices: [
+    Slice(columns: [
         SliceColumn(offset: 0, span: 18, cards: [Card(style: .regular)]),
         SliceColumn(offset: 18, span: 6, cards: [Card(style: .regular)])
-    ],
+    ]),
     regularSlice,
     compactSlice,
     compactSlice
-]
+])
 
-layouts["fixed/medium/fast-XI"] = [
+let fixed_medium_fast_XI = CollectionLayoutTemplate(slices: [
     regularSliceLarge,
     compactSlice,
     compactSlice
-]
-
+])
+/*
 layouts["fixed/medium/slow-XII-mpu"] = [
     regular3ColumnSlice,
     [
